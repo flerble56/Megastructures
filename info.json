@@ -8,5 +8,4 @@
     "factorio_version": "0.17",
     "dependencies": "base >= 0.17",
     "description": "Adds Megastructures - massive and expensive buildings with powerful effects"
-
 }
