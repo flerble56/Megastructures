@@ -1,8 +1,14 @@
-local node = table.deepcopy(data.raw.electric-pole["medium-electric-pole"])
+local node = table.deepcopy(data.raw["electric-pole"]["medium-electric-pole"])
 
 node.name = "node"
-node.supply_area_distance = 50
-node.maximum_wire_distance = 100
+node.icons= {
+    {
+       icon=node.icon,
+       tint={r=1,g=0,b=0,a=0.3}
+    },
+}
+node.supply_area_distance = 64
+node.maximum_wire_distance = 64
 node.draw_copper_wires = false
 node.draw_circuit_wires = false
 
