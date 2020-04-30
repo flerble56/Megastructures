@@ -11,6 +11,14 @@ node.supply_area_distance = 64
 node.maximum_wire_distance = 64
 node.draw_copper_wires = false
 node.draw_circuit_wires = false
+node.connection_points = {}
+local wire_pos = WirePosition:new()
+local shadow_pos = WirePosition:new()
+local wire_con = WireConnectionPoint:new()
+wire_con.wire = wire_pos
+wire_con.shadow = shadow_pos
+node.connection_points[0] = wire_con
+
 
 local nodeItem = table.deepcopy(data.raw["item"]["medium-electric-pole"])
 
