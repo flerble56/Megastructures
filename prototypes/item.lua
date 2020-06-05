@@ -1100,4 +1100,178 @@ data:extend({
   icon_size = 32,
   subgroup = "intermediate-product"
 },
+{
+  type = "radar",
+  name = "mega-radar",
+  icon = "__base__/graphics/icons/radar.png",
+  icon_size = 32,
+  flags = {"placeable-neutral", "placeable-player", "player-creation"},
+  minable = {mining_time = 1, result = "mega-radar"},
+  max_health = 350,
+  corpse = "radar-remnants",
+  resistances = {},
+  collision_box = {{-1.8, -1.8}, {1.8, 1.8}},
+  selection_box = {{-2, -2}, {2, 2}},
+  drawing_box = {{-2, -2.2}, {2, 2}},
+  energy_usage = "500kW",
+  energy_per_sector = "5MW",
+  energy_per_nearby_scan = "500kW",
+  energy_source =
+  {
+    type = "electric",
+    usage_priority = "secondary-input",
+    emissions_per_minute = 20
+  },
+  max_distance_of_sector_revealed = 100,
+  max_distance_of_nearby_sector_revealed = 50,
+  pictures =
+  {
+    layers =
+    {
+
+      {
+        filename = "__base__/graphics/entity/radar/radar.png",
+        priority = "high",
+        width = 70,
+        height = 136,
+        direction_count = 4,
+        shift = util.by_pixel(0, 1-32),
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/radar/hr-radar.png",
+          priority = "high",
+          width = 138,
+          height = 270,
+          direction_count = 4,
+          shift = util.by_pixel(0, 1-32),
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__base__/graphics/entity/radar/radar-shadow.png",
+        priority = "high",
+        width = 186,
+        height = 52,
+        direction_count = 4,
+        shift = util.by_pixel(62, 42-32),
+        draw_as_shadow = true,
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
+          priority = "high",
+          width = 370,
+          height = 104,
+          direction_count = 4,
+          shift = util.by_pixel(62, 42-32),
+          draw_as_shadow = true,
+          scale = 0.5
+        }
+      }
+    }
+  },
+
+},
+{
+  type = "item",
+  name = "mega-radar",
+  icon = "__base__/graphics/icons/radar.png",
+  icon_size = 32,
+  subgroup = "defensive-structure",
+  order = "d[mega-radar]",
+  place_result = "mega-radar",
+  stack_size = 10
+},
+{
+  type = "item",
+  name = "signal-generator",
+  icon = "__base__/graphics/icons/programmable-speaker.png",
+  icon_size = 32,
+  subgroup = "intermediate-product",
+  order = "a[signal-generator]",
+  stack_size = 50
+},
+{
+  type = "recipe",
+  name = "signal-generator",
+  energy_required = 100,
+  enabled = false,
+  ingredients =
+  {
+    {"advanced-circuit", 10},
+    {"uranium-235", 10}
+  },
+  result = "signal-generator",
+  requester_paste_multiplier= 10
+},
+{
+  type = "recipe",
+  name = "mega-radar",
+  energy_required = 500,
+  enabled = false,
+  ingredients =
+  {
+    {"radar", 50},
+    {"processing-unit", 100},
+    {"signal-generator", 20}
+  },
+  result = "mega-radar",
+  requester_paste_multiplier= 5
+},
+{
+  type = "technology",
+  name = "low-frequency-signal-generation",
+  icon_size = 32,
+  icon = "__base__/graphics/icons/radar.png",
+  effects =
+  {
+    {
+      type = "unlock-recipe",
+      recipe = "signal-generator"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "mega-radar"
+    },
+  },
+  prerequisites = {"uranium-processing","advanced-electronics-2","low-density-structure"},
+  unit =
+  {
+    ingredients =
+    {
+      {"automation-science-pack", 1},
+      {"logistic-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"production-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"space-science-pack", 1}
+    },
+    time = 60,
+    count = 1000
+  },
+  order = "e-p-b-c"
+},
+{
+  type = "recipe",
+  name = "deep-crust-drill",
+  category = "drilling",
+  energy_required = 20,
+  enabled = false,
+  ingredients =
+  {
+    {type="fluid", name= "lubricant", amount = 200}
+  },
+  result_count = 5,
+  results = 
+  {
+    {"iron-ore", 1},
+    {"copper-ore", 1},
+    {"uranium-ore", 1},
+    {"stone", 1},
+    {"coal", 1}
+  },
+  requester_paste_multiplier= 10,
+  icon = "__base__/graphics/icons/kovarex-enrichment-process.png",
+  icon_size = 32,
+  subgroup = "intermediate-product"
+}
 })
