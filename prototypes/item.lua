@@ -22,40 +22,20 @@ data:extend({
       {
 
         {
-          filename = "__base__/graphics/entity/substation/substation.png",
+          filename = "__Megastrucutres__/graphics/entity/node/node.png",
           priority = "high",
-          width = 70,
-          height = 136,
+          width = 200,
+          height = 250,
           direction_count = 4,
           shift = util.by_pixel(0, 1-32),
           hr_version =
           {
-            filename = "__base__/graphics/entity/substation/hr-substation.png",
+            filename = "__Megastructures__/graphics/entity/node/hr-node.png",
             priority = "high",
-            width = 138,
-            height = 270,
+            width = 400,
+            height = 500,
             direction_count = 4,
             shift = util.by_pixel(0, 1-32),
-            scale = 0.5
-          }
-        },
-        {
-          filename = "__base__/graphics/entity/substation/substation-shadow.png",
-          priority = "high",
-          width = 186,
-          height = 52,
-          direction_count = 4,
-          shift = util.by_pixel(62, 42-32),
-          draw_as_shadow = true,
-          hr_version =
-          {
-            filename = "__base__/graphics/entity/substation/hr-substation-shadow.png",
-            priority = "high",
-            width = 370,
-            height = 104,
-            direction_count = 4,
-            shift = util.by_pixel(62, 42-32),
-            draw_as_shadow = true,
             scale = 0.5
           }
         }
@@ -139,10 +119,10 @@ data:extend({
 {
   type = "item",
   name = "node",
-  icon = "__base__/graphics/icons/medium-electric-pole.png",
+  icon = "__Megastructures__/graphics/icons/node-icon.png",
   icon_size = 32,
   subgroup = "energy-pipe-distribution",
-  order = "a[energy]-d[node]",
+  order = "a[energy]-f[node]",
   place_result = "node",
   stack_size = 50
 },
@@ -248,33 +228,18 @@ data:extend({
     layers =
     {
       {
-        filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
-        width = 154,
-        height = 158,
+        filename = "__Megastructures__/graphics/entity/mega-reactor/mega-reactor.png",
+        width = 300,
+        height = 300,
+        scale = 1.5,
         shift = util.by_pixel(-6, -6),
         hr_version =
         {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
-          width = 302,
-          height = 318,
-          scale = 0.5,
+          filename = "__Megastructures__/graphics/entity/mega-reactor/hr-mega-reactor.png",
+          width = 600,
+          height = 600,
+          scale = 0.75,
           shift = util.by_pixel(-5, -7),
-        }
-      },
-      {
-        filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
-        width = 263,
-        height = 162,
-        shift = { 1.625 , 0 },
-        draw_as_shadow = true,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
-          width = 525,
-          height = 323,
-          scale = 0.5,
-          shift = { 1.625, 0 },
-          draw_as_shadow = true
         }
       }
     }
@@ -525,10 +490,10 @@ data:extend({
 {
   type = "item",
   name = "mega-reactor",
-  icon = "__base__/graphics/icons/nuclear-reactor.png",
+  icon = "__Megastructures/graphics/icons/mega-reactor-icon.png",
   icon_size = 32,
   subgroup = "energy",
-  order = "f[nuclear-energy]-a[mega-reactor]",
+  order = "f[nuclear-energy]-b[mega-reactor]",
   place_result = "mega-reactor",
   stack_size = 5
 },
@@ -1084,7 +1049,7 @@ data:extend({
   enabled = false,
   ingredients =
   {
-    {type="fluid", name= "lubricant", amount = 200}
+    {type="fluid", name= "lubricant", amount = 100}
   },
   result_count = 5,
   results = 
