@@ -982,7 +982,7 @@ data:extend({
       recipe = "deep-crust-drill"
     },
   },
-  prerequisites = {"uranium-processing","advanced-electronics","mining-productivity-4"},
+  prerequisites = {"uranium-processing","advanced-electronics","mining-productivity-3"},
   unit =
   {
     ingredients =
@@ -1003,11 +1003,11 @@ data:extend({
   type = "recipe",
   name = "deep-crust-drill",
   category = "drilling",
-  energy_required = 20,
+  energy_required = 200,
   enabled = false,
   ingredients =
   {
-    {type="fluid", name= "lubricant", amount = 100}
+    {type="fluid", name= "lubricant", amount = 20}
   },
   result_count = 5,
   results = 
@@ -1058,18 +1058,20 @@ data:extend({
         priority = "high",
         width = 500,
         height = 500,
-        direction_count = 4,
-        shift = util.by_pixel(1-32, 1-64),
-        scale = 1,
+        direction_count = 64,
+        line_length = 8,
+        shift = util.by_pixel(1+8, 1-56),
+        scale = 1.2,
         hr_version =
         {
           filename = "__Megastructures__/graphics/entity/mega-radar/hr-mega-radar.png",
           priority = "high",
           width = 500,
           height = 500,
-          direction_count = 4,
-          shift = util.by_pixel(1-32, 1-64),
-          scale = 1
+          direction_count = 64,
+          line_length = 8,
+          shift = util.by_pixel(1+8, 1-56),
+          scale = 1.2
         }
       }
     }
@@ -1079,7 +1081,7 @@ data:extend({
 {
   type = "item",
   name = "mega-radar",
-  icon = "__base__/graphics/icons/radar.png",
+  icon = "__Megastructures__/graphics/icons/mega-radar-icon.png",
   icon_size = 32,
   subgroup = "defensive-structure",
   order = "d[mega-radar]",
@@ -1125,8 +1127,8 @@ data:extend({
 {
   type = "technology",
   name = "low-frequency-signal-generation",
-  icon_size = 32,
-  icon = "__base__/graphics/icons/radar.png",
+  icon_size = 128,
+  icon = "__Megastructures__/graphics/icons/mega-radar-tech.png",
   effects =
   {
     {
