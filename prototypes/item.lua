@@ -12,8 +12,8 @@ data:extend({
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box = {{-1, -3}, {1, 1}},
-    maximum_wire_distance = 64,
-    supply_area_distance = 64,
+    maximum_wire_distance = 32,
+    supply_area_distance = 32,
     draw_copper_wires = false,
     draw_circuit_wires = false,
     pictures =
@@ -24,18 +24,18 @@ data:extend({
         {
           filename = "__Megastrucutres__/graphics/entity/node/node.png",
           priority = "high",
-          width = 200,
-          height = 250,
-          direction_count = 4,
-          shift = util.by_pixel(0, 1-32),
+          width = 500,
+          height = 500,
+          direction_count = 1,
+          shift = util.by_pixel(0, 1-64),
           hr_version =
           {
             filename = "__Megastructures__/graphics/entity/node/hr-node.png",
             priority = "high",
-            width = 400,
-            height = 500,
-            direction_count = 4,
-            shift = util.by_pixel(0, 1-32),
+            width = 1000,
+            height = 1000,
+            direction_count = 1,
+            shift = util.by_pixel(0, 1-64),
             scale = 0.5
           }
         }
@@ -65,48 +65,6 @@ data:extend({
           red = util.by_pixel(22, -81)
         }
       },
-      {
-        shadow =
-        {
-          copper = util.by_pixel(133, 9),
-          green = util.by_pixel(144, 21),
-          red = util.by_pixel(110, -3)
-        },
-        wire =
-        {
-          copper = util.by_pixel(0, -85),
-          green = util.by_pixel(15, -70),
-          red = util.by_pixel(-15, -92)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel(133, 9),
-          green = util.by_pixel(127, 26),
-          red = util.by_pixel(127, -8)
-        },
-        wire =
-        {
-          copper = util.by_pixel(0, -85),
-          green = util.by_pixel(0, -66),
-          red = util.by_pixel(0, -97)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel(133, 9),
-          green = util.by_pixel(111, 20),
-          red = util.by_pixel(144, -3)
-        },
-        wire =
-        {
-          copper = util.by_pixel(0, -86),
-          green = util.by_pixel(-15, -71),
-          red = util.by_pixel(15, -92)
-        }
-      }
     },
     radius_visualisation_picture =
     {
@@ -490,7 +448,7 @@ data:extend({
 {
   type = "item",
   name = "mega-reactor",
-  icon = "__Megastructures/graphics/icons/mega-reactor-icon.png",
+  icon = "__Megastructures__/graphics/icons/mega-reactor-icon.png",
   icon_size = 32,
   subgroup = "energy",
   order = "f[nuclear-energy]-b[mega-reactor]",
@@ -504,10 +462,10 @@ data:extend({
   enabled = false,
   ingredients =
   {
-    {"nuclear-reactor", 20},
+    {"nuclear-reactor", 10},
     {"processing-unit", 100},
     {"low-density-structure", 100},
-    {"heat-pipe", 100}
+    {"heat-pipe", 50}
   },
   result = "mega-reactor",
   requester_paste_multiplier = 1
@@ -654,7 +612,7 @@ data:extend({
   icon = "__base__/graphics/icons/heat-pipe.png",
   icon_size = 32,
   subgroup = "energy",
-  order = "f[nuclear-energy]-b[conductive-heat-pipe]",
+  order = "f[nuclear-energy]-c[conductive-heat-pipe]",
   place_result = "conductive-heat-pipe",
   stack_size = 50
 },
@@ -1074,9 +1032,10 @@ data:extend({
   minable = {mining_time = 1, result = "mega-radar"},
   max_health = 350,
   corpse = "radar-remnants",
+  rotation_speed = 0.01,
   resistances = {},
-  collision_box = {{-1.8, -1.8}, {1.8, 1.8}},
-  selection_box = {{-2, -2}, {2, 2}},
+  collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
+  selection_box = {{-3, -3}, {3, 3}},
   drawing_box = {{-2, -2.2}, {2, 2}},
   energy_usage = "500kW",
   energy_per_sector = "5MW",
@@ -1095,41 +1054,22 @@ data:extend({
     {
 
       {
-        filename = "__base__/graphics/entity/radar/radar.png",
+        filename = "__Megastructures__/graphics/entity/mega-radar/mega-radar.png",
         priority = "high",
-        width = 70,
-        height = 136,
+        width = 500,
+        height = 500,
         direction_count = 4,
-        shift = util.by_pixel(0, 1-32),
+        shift = util.by_pixel(1-32, 1-64),
+        scale = 1,
         hr_version =
         {
-          filename = "__base__/graphics/entity/radar/hr-radar.png",
+          filename = "__Megastructures__/graphics/entity/mega-radar/hr-mega-radar.png",
           priority = "high",
-          width = 138,
-          height = 270,
+          width = 500,
+          height = 500,
           direction_count = 4,
-          shift = util.by_pixel(0, 1-32),
-          scale = 0.5
-        }
-      },
-      {
-        filename = "__base__/graphics/entity/radar/radar-shadow.png",
-        priority = "high",
-        width = 186,
-        height = 52,
-        direction_count = 4,
-        shift = util.by_pixel(62, 42-32),
-        draw_as_shadow = true,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
-          priority = "high",
-          width = 370,
-          height = 104,
-          direction_count = 4,
-          shift = util.by_pixel(62, 42-32),
-          draw_as_shadow = true,
-          scale = 0.5
+          shift = util.by_pixel(1-32, 1-64),
+          scale = 1
         }
       }
     }
