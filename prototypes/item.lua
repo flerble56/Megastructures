@@ -664,229 +664,33 @@ data:extend({
   corpse = "centrifuge-remnants",
   dying_explosion = "medium-explosion",
   resistances = {},
-  collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-  selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-  drawing_box = {{-1.5, -2.2}, {1.5, 1.5}},
+  collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+  selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+  drawing_box = {{-2.5, -2.8}, {2.5, 2.5}},
 
-  always_draw_idle_animation = true,
-  idle_animation =
+  animation = 
   {
-    layers =
+    layers = 
     {
-      -- Centrifuge A
       {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
+        filename = "__Megastructures__/graphics/entity/deep-drill/deep-drill.png",
         priority = "high",
-        line_length = 8,
-        width = 119,
-        height = 107,
-        frame_count = 64,
-        shift = util.by_pixel(-0.5, -26.5),
+        width = 500,
+        height = 500,
+        direction_count = 1,
+        shift = util.by_pixel(0, 1-32),
+        scale = 0.5,
         hr_version =
         {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C.png",
+          filename = "__Megastructures__/graphics/entity/deep-drill/hr-deep-drill.png",
           priority = "high",
-          scale = 0.5,
-          line_length = 8,
-          width = 237,
-          height = 214,
-          frame_count = 64,
-          shift = util.by_pixel(-0.25, -26.5)
-        }
-      },
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
-        draw_as_shadow = true,
-        priority = "high",
-        line_length = 8,
-        width = 132,
-        height = 74,
-        frame_count = 64,
-        shift = util.by_pixel(20, -10),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C-shadow.png",
-          draw_as_shadow = true,
-          priority = "high",
-          scale = 0.5,
-          line_length = 8,
-          width = 279,
-          height = 152,
-          frame_count = 64,
-          shift = util.by_pixel(16.75, -10)
-        }
-      },
-      -- Centrifuge B
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
-        priority = "high",
-        line_length = 8,
-        width = 78,
-        height = 117,
-        frame_count = 64,
-        shift = util.by_pixel(23, 6.5),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B.png",
-          priority = "high",
-          scale = 0.5,
-          line_length = 8,
-          width = 156,
-          height = 234,
-          frame_count = 64,
-          shift = util.by_pixel(23, 6.5)
-        }
-      },
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
-        draw_as_shadow = true,
-        priority = "high",
-        line_length = 8,
-        width = 124,
-        height = 74,
-        frame_count = 64,
-        shift = util.by_pixel(63, 16),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B-shadow.png",
-          draw_as_shadow = true,
-          priority = "high",
-          scale = 0.5,
-          line_length = 8,
-          width = 251,
-          height = 149,
-          frame_count = 64,
-          shift = util.by_pixel(63.25, 15.25)
-        }
-      },
-      -- Centrifuge A
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
-        priority = "high",
-        line_length = 8,
-        width = 70,
-        height = 123,
-        frame_count = 64,
-        shift = util.by_pixel(-26, 3.5),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A.png",
-          priority = "high",
-          scale = 0.5,
-          line_length = 8,
-          width = 139,
-          height = 246,
-          frame_count = 64,
-          shift = util.by_pixel(-26.25, 3.5)
-        }
-      },
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
-        priority = "high",
-        draw_as_shadow = true,
-        line_length = 8,
-        width = 108,
-        height = 54,
-        frame_count = 64,
-        shift = util.by_pixel(6, 27),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A-shadow.png",
-          priority = "high",
-          draw_as_shadow = true,
-          scale = 0.5,
-          line_length = 8,
-          width = 230,
-          height = 124,
-          frame_count = 64,
-          shift = util.by_pixel(8.5, 23.5)
+          width = 750,
+          height = 750,
+          direction_count = 1,
+          shift = util.by_pixel(0, 1-32),
+          scale = 0.33
         }
       }
-    }
-  },
-
-  animation =
-  {
-    layers =
-    {
-      -- Centrifuge C
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-C-light.png",
-        priority = "high",
-        blend_mode = "additive", -- centrifuge
-        line_length = 8,
-        width = 96,
-        height = 104,
-        frame_count = 64,
-        shift = util.by_pixel(0, -27),
-
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C-light.png",
-          priority = "high",
-          scale = 0.5,
-          blend_mode = "additive", -- centrifuge
-          line_length = 8,
-          width = 190,
-          height = 207,
-          frame_count = 64,
-          shift = util.by_pixel(0, -27.25)
-        }
-      },
-      -- Centrifuge B
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-B-light.png",
-        priority = "high",
-        blend_mode = "additive", -- centrifuge
-        line_length = 8,
-        width = 65,
-        height = 103,
-        frame_count = 64,
-        shift = util.by_pixel(16.5, 0.5),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B-light.png",
-          priority = "high",
-          scale = 0.5,
-          blend_mode = "additive", -- centrifuge
-          line_length = 8,
-          width = 131,
-          height = 206,
-          frame_count = 64,
-          shift = util.by_pixel(16.75, 0.5)
-        }
-      },
-      -- Centrifuge A
-      {
-        filename = "__base__/graphics/entity/centrifuge/centrifuge-A-light.png",
-        priority = "high",
-        blend_mode = "additive", -- centrifuge
-        line_length = 8,
-        width = 55,
-        height = 98,
-        frame_count = 64,
-        shift = util.by_pixel(-23.5, -2),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A-light.png",
-          priority = "high",
-          scale = 0.5,
-          blend_mode = "additive", -- centrifuge
-          line_length = 8,
-          width = 108,
-          height = 197,
-          frame_count = 64,
-          shift = util.by_pixel(-23.5, -1.75)
-        }
-      }
-    }
-  },
-
-  working_visualisations =
-  {
-    {
-      effect = "uranium-glow", -- changes alpha based on energy source light intensity
-      light = {intensity = 0.6, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.0, g = 1.0, b = 0.0}}
     }
   },
   open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
@@ -930,7 +734,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {0, -2} }},
+        pipe_connections = {{ type="input", position = {0, -3} }},
         secondary_draw_orders = { north = -1 }
       },
       off_when_no_fluid_recipe = true
@@ -939,7 +743,7 @@ data:extend({
 {
   type = "item",
   name = "deep-drill",
-  icon = "__base__/graphics/icons/centrifuge.png",
+  icon = "__Megastructures__/graphics/icons/deep-drill-icon.png",
   icon_size = 32,
   subgroup = "production-machine",
   order = "f[deep-drill]",
@@ -966,7 +770,7 @@ data:extend({
   type = "technology",
   name = "deep-crust-drilling",
   icon_size = 128,
-  icon = "__base__/graphics/technology/nuclear-power.png",
+  icon = "__Megastructures__/graphics/icons/deep-drill-tech.png",
   effects =
   {
     {
@@ -1018,15 +822,14 @@ data:extend({
     {"stone", 1},
     {"coal", 1}
   },
-  requester_paste_multiplier= 10,
-  icon = "__base__/graphics/icons/kovarex-enrichment-process.png",
+  icon = "__Megastructures__/graphics/icons/uranium-drill-head-icon.png",
   icon_size = 32,
   subgroup = "intermediate-product"
 },
 {
   type = "radar",
   name = "mega-radar",
-  icon = "__base__/graphics/icons/radar.png",
+  icon = "__Megastructures__/graphics/icons/mega-radar-icon.png",
   icon_size = 32,
   flags = {"placeable-neutral", "placeable-player", "player-creation"},
   minable = {mining_time = 1, result = "mega-radar"},
